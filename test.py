@@ -18,7 +18,6 @@ def process_video(cap, a_thresh ):
         fgmask = fgbg.apply(frame)
         fgmask = cv2.morphologyEx(fgmask, cv2.MORPH_OPEN, kernel)
         img = cv2.cvtColor(fgmask, cv2.COLOR_BGR2RGB)
-        blurred = cv2.GaussianBlur(img, (5, 5), 0)
         edge = cv2.Canny(img, 200, 200)
         lines = cv2.HoughLines(edge, 1, np.pi / 180, a_thresh)
 
@@ -44,7 +43,7 @@ def process_video(cap, a_thresh ):
 
                 #cv2.line(frame, (x1, y1), (x2, y2), (0, 0, 255), 2)
 
-        # Draw the final line
+        
         if count != 0:
             afinal = a1 / count
             bfinal = b1 / count
@@ -61,148 +60,127 @@ def process_video(cap, a_thresh ):
         if k == 27:
             break
 
-# Open the first video
 cap1 = cv2.VideoCapture('t1.mp4')
 fgbg = cv2.createBackgroundSubtractorMOG2()
 kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (1, 1))
 
-# Process the first video
 process_video(cap1, a_thresh=100)
 
-# Open the second video
+
 cap2 = cv2.VideoCapture('t2.1.mp4')
 fgbg = cv2.createBackgroundSubtractorMOG2()
 kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (1, 1))
 
-# Process the second video
 process_video(cap2, a_thresh=200)
 cap3 = cv2.VideoCapture('t2.2.mp4')
 fgbg = cv2.createBackgroundSubtractorMOG2()
 kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (1, 1))
 
-# Process the first video
 process_video(cap3, a_thresh=150)
 
 cap4 = cv2.VideoCapture('t3.mp4')
 fgbg = cv2.createBackgroundSubtractorMOG2()
 kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (1, 1))
 
-# Process the first video
 process_video(cap4, a_thresh=195)
 
 cap5 = cv2.VideoCapture('t4.mp4')
 fgbg = cv2.createBackgroundSubtractorMOG2()
 kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (1, 1))
 
-# Process the first video
 process_video(cap5, a_thresh=105)
 
 cap6 = cv2.VideoCapture('t5.mp4')
 fgbg = cv2.createBackgroundSubtractorMOG2()
 kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (1, 1))
 
-# Process the first video
 process_video(cap6, a_thresh=100)
 
 cap7 = cv2.VideoCapture('t6.mp4')
 fgbg = cv2.createBackgroundSubtractorMOG2()
 kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (1, 1))
 
-# Process the first video
 process_video(cap7, a_thresh=100)
 
 cap8 = cv2.VideoCapture('t7.mp4')
 fgbg = cv2.createBackgroundSubtractorMOG2()
 kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (1, 1))
 
-# Process the first video
 process_video(cap8, a_thresh=200)
 
 cap9 = cv2.VideoCapture('t8.mp4')
 fgbg = cv2.createBackgroundSubtractorMOG2()
 kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (1, 1))
 
-# Process the first video
 process_video(cap9, a_thresh=135)
 
 cap10 = cv2.VideoCapture('t9.1.mp4')
 fgbg = cv2.createBackgroundSubtractorMOG2()
 kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (1, 1))
-
-# Process the first video
 process_video(cap10, a_thresh=135)
 
 cap11 = cv2.VideoCapture('t9.2.mp4')
 fgbg = cv2.createBackgroundSubtractorMOG2()
 kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (1, 1))
 
-# Process the first video
 process_video(cap11, a_thresh=185)
 
 cap12 = cv2.VideoCapture('t10.1.mp4')
 fgbg = cv2.createBackgroundSubtractorMOG2()
 kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (1, 1))
 
-# Process the first video
 process_video(cap12, a_thresh=185)
 
 cap13 = cv2.VideoCapture('t10.2.mp4')
 fgbg = cv2.createBackgroundSubtractorMOG2()
 kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (1, 1))
 
-# Process the first video
 process_video(cap13, a_thresh=165)
 
 cap14 = cv2.VideoCapture('t11.mp4')
 fgbg = cv2.createBackgroundSubtractorMOG2()
 kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (1, 1))
 
-# Process the first video
 process_video(cap14, a_thresh=178)
 
 cap15 = cv2.VideoCapture('t12.mp4')
 fgbg = cv2.createBackgroundSubtractorMOG2()
 kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (1, 1))
 
-# Process the first video
 process_video(cap15, a_thresh=178)
 
 cap16 = cv2.VideoCapture('t13.mp4')
 fgbg = cv2.createBackgroundSubtractorMOG2()
 kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (1, 1))
 
-# Process the first video
 process_video(cap16, a_thresh=178)
 
 cap17 = cv2.VideoCapture('t14.1.mp4')
 fgbg = cv2.createBackgroundSubtractorMOG2()
 kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (1, 1))
 
-# Process the first video
 process_video(cap17, a_thresh=100)
 
 cap18 = cv2.VideoCapture('t14.2.mp4')
 fgbg = cv2.createBackgroundSubtractorMOG2()
 kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (1, 1))
 
-# Process the first video
 process_video(cap18, a_thresh=200)
 
 cap19 = cv2.VideoCapture('t15.1.mp4')
 fgbg = cv2.createBackgroundSubtractorMOG2()
 kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (1, 1))
 
-# Process the first video
 process_video(cap19, a_thresh=135)
 
 cap20 = cv2.VideoCapture('t15.2.mp4')
 fgbg = cv2.createBackgroundSubtractorMOG2()
 kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (1, 1))
+ 
 
-# Process the first video
 process_video(cap20, a_thresh=105)
 
-# Release video captures
+
 cap1.release()
 cap2.release()
 cap3.release()
